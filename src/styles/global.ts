@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   * {
@@ -21,28 +21,29 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-`
+`;
 interface ContainerProps {
-    direction?: string
-    justify?: string
-    align?: string
-    background?: string
-    responsive?: boolean
-    htresponsive?: boolean
-    height?: string
-    width?: string
-  }
+  direction?: string;
+  justify?: string;
+  align?: string;
+  background?: string;
+  responsive?: boolean;
+  htresponsive?: boolean;
+  height?: string;
+  width?: string;
+}
 export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: ${({ direction }) => (direction ? 'row' : 'column')};
-  justify-content: ${props => (props.justify ? props.justify : 'center')};
-  align-items: ${props => (props.align ? props.align : 'center')};
-  width: ${props => (props.width ? props.width : '100%')};
-  height: ${props => (props.height ? props.height : '100vh')};
-  background: ${props => (props.background ? props.background : 'transparent')};
+  justify-content: ${(props) => (props.justify ? props.justify : 'center')};
+  align-items: ${(props) => (props.align ? props.align : 'center')};
+  width: ${(props) => (props.width ? props.width : '100%')};
+  height: ${(props) => (props.height ? props.height : '100vh')};
+  background: ${(props) =>
+    props.background ? props.background : 'transparent'};
   @media (max-width: 769px) {
     flex-direction: ${({ responsive }) => (responsive ? 'column' : 'row')};
     width: ${({ responsive }) => (responsive ? '100%' : '100%')};
     height: ${({ htresponsive }) => (htresponsive ? '100vh' : 'auto')};
   }
-`
+`;
