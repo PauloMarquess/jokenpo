@@ -1,27 +1,6 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
-export default createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: 0;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-  }
-  body {
-    -webkit-font-smoothing: antialiased;
-  }
-  body,input,button,textarea{
-    font-family: 'Montserrat', sans-serif;
-  }
 
-  button {
-    cursor: pointer;
-  }
-`;
 interface ContainerProps {
   direction?: string;
   justify?: string;
