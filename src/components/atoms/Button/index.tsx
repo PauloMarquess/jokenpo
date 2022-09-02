@@ -6,10 +6,11 @@ interface ButtonProps {
   onClick: () => void;
 }
 
-export const Button = ({ children, onClick }: ButtonProps) => {
+const Button = ({ children, onClick }: ButtonProps) => {
   return (
     <ContainerButton>
       <button onClick={onClick}>{children}</button>
     </ContainerButton>
   );
 };
+export default Button;
