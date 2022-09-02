@@ -40,11 +40,12 @@ const Game = () => {
     setComputerAction(actionComputer.label);
     checkWinner(value.value, actionComputer.value);
   };
+
   const handleUserName = (value: any) => {
     if (!value) return setUserName('JOGADOR');
-
     setUserName(value);
   };
+
   const checkWinner = (playerValue, computerValue) => {
     const playerRockWin =
       playerValue === valueTypeEnum.ROCK &&
@@ -59,6 +60,7 @@ const Game = () => {
     const playerWin = playerRockWin || playerPaperWin || playerScissorsWin;
 
     if (drawerResult) return setTextGame('Empate jogue novamente !');
+
     if (playerWin) {
       setScorePlayerValue((state) => state + 1);
       return setTextGame('Vitória jogue novamente !');
@@ -66,6 +68,7 @@ const Game = () => {
     setScoreComputerValue((state) => state + 1);
     return setTextGame('Derrota jogue novamente !');
   };
+
   const startGame = () => {
     if (userName === 'JOGADOR') {
       handleModal('user');
@@ -74,6 +77,7 @@ const Game = () => {
     if (playGame) return resetValues();
     setPlayGame(true);
   };
+
   const resetValues = () => {
     setTextGame('Iniciar jogo !');
     setPlayGame(false);
@@ -82,6 +86,7 @@ const Game = () => {
     setUserAction('❓');
     setComputerAction('❓');
   };
+
   useEffect(() => {
     const checkVictory = () => {
       const playerWin = scorePlayerValue === SCORE_TO_WIN;
@@ -100,7 +105,10 @@ const Game = () => {
           handleUserName(e.target.value);
         }}
       />
-      <Button children={playGame ? 'Parar' : 'Iniciar'} onClick={startGame} />
+      <Button
+        children={playGame ? 'Reiniciar jogo !' : 'Iniciar'}
+        onClick={startGame}
+      />
       <Score
         userName={userName}
         scorePlayer={scorePlayerValue}
@@ -119,10 +127,19 @@ const Game = () => {
           handleModal('rules');
         }}
       />
-      <ActionsGame
-        disabled={!playGame}
-        onClick={(value: any) => handleClick(value)}
-      />
+      <div
+        style={{
+          display: `${
+            scorePlayerValue >= 10 || scoreComputerValue >= 10 ? 'none' : 'flex'
+          }`,
+        }}
+      >
+        <ActionsGame
+          disabled={!playGame}
+          onClick={(value: any) => handleClick(value)}
+        />
+      </div>
+
       <Modal
         open={open}
         titleModal={titleModal}
