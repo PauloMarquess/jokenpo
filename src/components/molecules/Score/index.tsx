@@ -7,7 +7,7 @@ interface StoreProps {
 }
 
 const Score = ({ userName, scorePlayer, scoreComputer }: StoreProps) => {
-  userName = userName.length > 12 ? `${userName.slice(0, 8)} ...` : userName;
+  userName = userName.length > 12 ? `${userName.slice(0, 12)} ...` : userName;
   return (
     <ContainerStore>
       <h1>PLACAR</h1>

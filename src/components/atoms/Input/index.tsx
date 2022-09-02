@@ -3,7 +3,7 @@ import { StyledInput } from './style';
 interface InputProps {
   placeholder?: string;
   type?: string;
-  onChange?: () => void;
+  onChange?: any;
 }
 
 const Input = ({ placeholder, type, onChange }: InputProps) => {

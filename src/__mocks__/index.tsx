@@ -4,7 +4,13 @@ export const actions = [
   { label: '✌🏽', description: 'Scissors', value: 3 },
 ];
 
-export const messages = {
+export const valueTypeEnum = {
+  ROCK: 1,
+  PAPER: 2,
+  SCISSORS: 3,
+};
+
+export const messages: any = {
   rules: {
     title: 'Regras',
     message:
