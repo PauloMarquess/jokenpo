@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -28,4 +29,19 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 }
+`;
+interface FlexProps {
+  align: string;
+  justify: string;
+  direction: string;
+  gap: string;
+}
+
+export const Flex = styled.div<FlexProps>`
+  display: flex;
+  width: 100%;
+  align-items: ${(props) => props.align || 'center'};
+  align-items: ${(props) => props.justify || 'center'};
+  align-items: ${(props) => props.direction || 'row'};
+  align-items: ${(props) => props.gap || '16px'};
 `;
