@@ -31,17 +31,17 @@ export const GlobalStyle = createGlobalStyle`
 }
 `;
 interface FlexProps {
-  align: string;
-  justify: string;
-  direction: string;
-  gap: string;
+  align?: string;
+  justify?: string;
+  direction?: string;
+  gap?: string;
 }
 
 export const Flex = styled.div<FlexProps>`
   display: flex;
   width: 100%;
   align-items: ${(props) => props.align || 'center'};
-  align-items: ${(props) => props.justify || 'center'};
-  align-items: ${(props) => props.direction || 'row'};
-  align-items: ${(props) => props.gap || '16px'};
+  justify-content: ${(props) => props.justify || 'center'};
+  flex-direction: ${(props) => props.direction || 'row'};
+  gap: ${(props) => props.gap || '16px'};
 `;

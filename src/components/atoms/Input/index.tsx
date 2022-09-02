@@ -1,14 +1,14 @@
+import { StyledInput } from './style';
+
 interface InputProps {
-  placeholder: string;
-  type: string;
-  onChange: () => void;
+  placeholder?: string;
+  type?: string;
+  onChange?: () => void;
 }
 
 const Input = ({ placeholder, type, onChange }: InputProps) => {
   return (
-    <div>
-      <input onChange={onChange} placeholder={placeholder} type={type} />
-    </div>
+    <StyledInput onChange={onChange} placeholder={placeholder} type={type} />
   );
 };
 
