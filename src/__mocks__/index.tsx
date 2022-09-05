@@ -4,7 +4,7 @@ export const actions = [
   { label: '✌🏽', description: 'Scissors', value: 3 },
 ];
 
-export const valueTypeEnum = {
+export const valueTypeEnum: any = {
   ROCK: 1,
   PAPER: 2,
   SCISSORS: 3,
