@@ -10,8 +10,4 @@ export const ContainerGame = styled(Flex)<object>`
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-
-  h1 {
-    padding-top: 50px;
-  }
 `;

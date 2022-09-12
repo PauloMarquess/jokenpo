@@ -15,18 +15,22 @@ export const ContainerModal = styled.div<ContainerModalProps>`
   opacity: ${(props) => (props.open ? '1' : '0')};
   z-index: 2;
   text-align: center;
+  color: #000;
 `;
 
 export const CloseModal = styled.button`
   width: 32px;
   height: 32px;
   position: absolute;
-  right: 2%;
-  top: 2%;
+  right: 3%;
+  top: 3%;
   background-color: #1a1a1a;
   border-radius: 50%;
   color: #ececec;
   font-weight: 700;
-  font-size: 27px;
-  line-height: 33px;
+  font-size: 18px;
+`;
+export const ContainModal = styled.div`
+  width: 90%;
+  margin: 40px auto;
 `;

@@ -10,5 +10,18 @@ export const ContainerScoreBoard = styled(Flex)`
     right: -30%;
     margin-bottom: 100px;
     width: 300px;
+    transition: 1s;
+    animation: showfreeza 1.5s both;
+
+    @keyframes showfreeza {
+      from {
+        opacity: 0;
+        transform: translate3d(80%, 0, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
   }
 `;

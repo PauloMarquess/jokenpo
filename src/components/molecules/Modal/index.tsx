@@ -1,4 +1,4 @@
-import { CloseModal, ContainerModal } from './styled';
+import { CloseModal, ContainerModal, ContainModal } from './styled';
 
 interface ModalProps {
   titleModal: string;
@@ -15,11 +15,11 @@ const Modal = ({
 }: ModalProps) => {
   return (
     <ContainerModal open={open}>
-      <div>
+      <ContainModal>
         <h1>{titleModal}</h1>
-        <CloseModal onClick={() => handleOpenModal()}>X</CloseModal>
+        <CloseModal onClick={() => handleOpenModal()}>x</CloseModal>
         <h3>{messageModal}</h3>
-      </div>
+      </ContainModal>
     </ContainerModal>
   );
 };

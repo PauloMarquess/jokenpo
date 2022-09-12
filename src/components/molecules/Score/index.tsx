@@ -1,4 +1,4 @@
-import { ContainerStore, ImagePlayer, Player, Players } from './styled';
+import { ContainerStore, ImagePlayer, Player, Players, Vs } from './styled';
 
 interface StoreProps {
   userName: string;
@@ -18,7 +18,7 @@ const Score = ({ userName, scorePlayer, scoreComputer, image }: StoreProps) => {
           <h2>{userName}</h2>
           <h2>{scorePlayer}</h2>
         </Player>
-        X
+        <Vs>X</Vs>
         <Player>
           <h2>FREEZA</h2>
           <h2>{scoreComputer}</h2>

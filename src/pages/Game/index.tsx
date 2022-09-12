@@ -4,6 +4,7 @@ import ActionsGame from '../../components/molecules/ActionsGame';
 import { actions, messages, valueTypeEnum } from '../../__mocks__';
 import { ContainerGame } from './styled';
 import { Images } from '../../assets';
+import AudioJokenpo from '../../audios/dbz.mp3';
 
 const Game = () => {
   const [titleModal, setTitleModal] = useState('');
@@ -16,6 +17,7 @@ const Game = () => {
   const [userAction, setUserAction] = useState('❓');
   const [computerAction, setComputerAction] = useState('❓');
   const [textGame, setTextGame] = useState('Iniciar Jogo');
+
   const SCORE_TO_WIN = 10;
 
   const handleModal = (type: any) => {
@@ -40,6 +42,8 @@ const Game = () => {
     const actionComputer = randomActionComputer();
     setComputerAction(actionComputer.label);
     checkWinner(value.value, actionComputer.value);
+    const x = document.getElementById('dbz');
+    x.play();
   };
 
   const handleUserName = (value: any) => {
@@ -99,6 +103,7 @@ const Game = () => {
   }, [scorePlayerValue, scoreComputerValue]);
   return (
     <ContainerGame>
+      <audio id="dbz" src={AudioJokenpo}></audio>
       <h1>JO KEN PÔ</h1>
       <Input
         placeholder="Digite o nome do jogador"

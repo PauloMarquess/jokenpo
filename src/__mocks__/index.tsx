@@ -18,12 +18,12 @@ export const messages: any = {
   },
   user: {
     title: 'Usuário',
-    message: 'Preencha um nome para o jogador',
+    message: 'Preencha um nome para o jogador e clique em Iniciar Jogo',
   },
   computerWin: {
     title: 'Que pena!',
     message:
-      'Não foi dessa vez, mais tente novamente aposto que você consegue !',
+      'Não foi dessa vez, mais tente novamente aposto que você consegue ! 😉',
   },
   playerWin: {
     title: 'Parabéns !',
