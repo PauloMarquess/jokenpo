@@ -3,6 +3,7 @@ import { Button, Input, Modal, Score, ScoreBoard } from '../../components';
 import ActionsGame from '../../components/molecules/ActionsGame';
 import { actions, messages, valueTypeEnum } from '../../__mocks__';
 import { ContainerGame } from './styled';
+import { Images } from '../../assets';
 
 const Game = () => {
   const [titleModal, setTitleModal] = useState('');
@@ -110,11 +111,16 @@ const Game = () => {
         onClick={startGame}
       />
       <Score
+        image={Images.vegeta}
         userName={userName}
         scorePlayer={scorePlayerValue}
         scoreComputer={scoreComputerValue}
       />
-      <ScoreBoard result={userAction} resultComputer={computerAction} />
+      <ScoreBoard
+        image={Images.freeza}
+        result={userAction}
+        resultComputer={computerAction}
+      />
       <Button
         children={textGame}
         onClick={() => {

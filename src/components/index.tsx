@@ -6,4 +6,3 @@ export { default as ScoreBoard } from './molecules/ScoreBoard';
 export { default as Modal } from './molecules/Modal';
 
 export { default as Game } from '../pages/Game';
-export { default as Home } from '../pages/Home';

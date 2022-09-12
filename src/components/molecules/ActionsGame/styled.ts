@@ -7,4 +7,6 @@ export const ButtonAction = styled.button`
   width: 80px;
   height: 80px;
   border-radius: 50%;
+  font-size: 28px;
+  border: none;
 `;

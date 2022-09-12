@@ -9,8 +9,9 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
     text-decoration: none;
     list-style: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
+
     a {
     text-decoration: none;
   }
@@ -22,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
   body,input,button,textarea{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 
   button {

@@ -1,12 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Game, Home } from '../components';
+import { Game } from '../components';
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/game" element={<Game />} />
+        <Route path="/" element={<Game />} />
       </Routes>
     </BrowserRouter>
   );
