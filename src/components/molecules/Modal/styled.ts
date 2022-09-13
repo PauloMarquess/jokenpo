@@ -19,16 +19,17 @@ export const ContainerModal = styled.div<ContainerModalProps>`
 `;
 
 export const CloseModal = styled.button`
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  right: 3%;
+  right: 2%;
   top: 3%;
   background-color: #1a1a1a;
   border-radius: 50%;
   color: #ececec;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
+  border: none;
 `;
 export const ContainModal = styled.div`
   width: 90%;

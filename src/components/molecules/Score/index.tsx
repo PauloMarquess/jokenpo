@@ -16,12 +16,12 @@ const Score = ({ userName, scorePlayer, scoreComputer, image }: StoreProps) => {
         <ImagePlayer src={image} />
         <Player>
           <h2>{userName}</h2>
-          <h2>{scorePlayer}</h2>
+          <h1>{scorePlayer}</h1>
         </Player>
         <Vs>X</Vs>
         <Player>
-          <h2>FREEZA</h2>
-          <h2>{scoreComputer}</h2>
+          <h2>Freeza</h2>
+          <h1>{scoreComputer}</h1>
         </Player>
       </Players>
     </ContainerStore>

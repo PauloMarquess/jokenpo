@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button, Input, Modal, Score, ScoreBoard } from '../../components';
 import ActionsGame from '../../components/molecules/ActionsGame';
 import { actions, messages, valueTypeEnum } from '../../__mocks__';
-import { ContainerGame } from './styled';
+import { ContainerGame, OptionsActions } from './styled';
 import { Images } from '../../assets';
 import AudioJokenpo from '../../audios/dbz.mp3';
 
@@ -17,6 +17,7 @@ const Game = () => {
   const [userAction, setUserAction] = useState('❓');
   const [computerAction, setComputerAction] = useState('❓');
   const [textGame, setTextGame] = useState('Iniciar Jogo');
+  const [id, setId] = useState('');
 
   const SCORE_TO_WIN = 10;
 
@@ -42,7 +43,7 @@ const Game = () => {
     const actionComputer = randomActionComputer();
     setComputerAction(actionComputer.label);
     checkWinner(value.value, actionComputer.value);
-    const x = document.getElementById('dbz');
+    const x: any = document.getElementById('dbz');
     x.play();
   };
 
@@ -51,7 +52,7 @@ const Game = () => {
     setUserName(value);
   };
 
-  const checkWinner = (playerValue, computerValue) => {
+  const checkWinner = (playerValue: number, computerValue: number) => {
     const playerRockWin =
       playerValue === valueTypeEnum.ROCK &&
       computerValue === valueTypeEnum.SCISSORS;
@@ -64,14 +65,16 @@ const Game = () => {
     const drawerResult = playerValue === computerValue;
     const playerWin = playerRockWin || playerPaperWin || playerScissorsWin;
 
-    if (drawerResult) return setTextGame('Empate jogue novamente !');
+    if (drawerResult) {
+      return setTextGame('Empate jogue novamente !'), setId('draw');
+    }
 
     if (playerWin) {
       setScorePlayerValue((state) => state + 1);
-      return setTextGame('Vitória jogue novamente !');
+      return setTextGame('Vitória jogue novamente !'), setId('victory');
     }
     setScoreComputerValue((state) => state + 1);
-    return setTextGame('Derrota jogue novamente !');
+    return setTextGame('Derrota jogue novamente !'), setId('defeat');
   };
 
   const startGame = () => {
@@ -90,6 +93,7 @@ const Game = () => {
     setScoreComputerValue(0);
     setUserAction('❓');
     setComputerAction('❓');
+    setId('');
   };
 
   useEffect(() => {
@@ -127,6 +131,7 @@ const Game = () => {
         resultComputer={computerAction}
       />
       <Button
+        id={id}
         children={textGame}
         onClick={() => {
           startGame();
@@ -138,18 +143,17 @@ const Game = () => {
           handleModal('rules');
         }}
       />
-      <div
-        style={{
-          display: `${
-            scorePlayerValue >= 10 || scoreComputerValue >= 10 ? 'none' : 'flex'
-          }`,
-        }}
+
+      <OptionsActions
+        display={
+          scorePlayerValue >= 10 || scoreComputerValue >= 10 ? 'none' : 'flex'
+        }
       >
         <ActionsGame
           disabled={!playGame}
           onClick={(value: any) => handleClick(value)}
         />
-      </div>
+      </OptionsActions>
 
       <Modal
         open={open}

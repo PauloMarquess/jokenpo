@@ -4,12 +4,15 @@ import { ContainerButton } from './style';
 interface ButtonProps {
   children: ReactNode;
   onClick: () => void;
+  id?: string;
 }
 
-const Button = ({ children, onClick }: ButtonProps) => {
+const Button = ({ children, onClick, id }: ButtonProps) => {
   return (
     <ContainerButton>
-      <button onClick={onClick}>{children}</button>
+      <button id={id} onClick={onClick}>
+        {children}
+      </button>
     </ContainerButton>
   );
 };

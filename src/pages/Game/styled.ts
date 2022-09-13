@@ -11,3 +11,11 @@ export const ContainerGame = styled(Flex)<object>`
   background-size: cover;
   color: #fff;
 `;
+
+interface OptionsActionsProps {
+  display?: string;
+}
+
+export const OptionsActions = styled.div<OptionsActionsProps>`
+  display: ${(props) => (props.display ? props.display : 'flex')};
+`;

@@ -23,5 +23,15 @@ export const ContainerScoreBoard = styled(Flex)`
         transform: translate3d(0, 0, 0);
       }
     }
+    @media (max-width: 769px) {
+      width: 60px;
+      padding-top: 10px;
+      right: 10px;
+    }
+  }
+  @media (max-width: 769px) {
+    width: 100%;
+    position: relative;
+    right: 3px;
   }
 `;
