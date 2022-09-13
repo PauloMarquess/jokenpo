@@ -41,7 +41,7 @@ export const ImagePlayer = styled.img`
     }
   }
   @media (max-width: 769px) {
-    width: 60px;
+    width: 80px;
     left: 10px;
     margin-top: 35px;
   }

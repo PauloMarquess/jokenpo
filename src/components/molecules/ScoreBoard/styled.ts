@@ -24,8 +24,8 @@ export const ContainerScoreBoard = styled(Flex)`
       }
     }
     @media (max-width: 769px) {
-      width: 60px;
-      padding-top: 10px;
+      width: 80px;
+      padding-top: 15px;
       right: 10px;
     }
   }
